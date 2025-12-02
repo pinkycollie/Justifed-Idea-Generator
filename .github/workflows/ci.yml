@@ -31,10 +31,6 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Run linting
-        run: npm run lint
-        continue-on-error: true
-
       - name: Build application
         run: npm run build
 

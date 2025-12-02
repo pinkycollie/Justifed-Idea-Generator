@@ -41,7 +41,7 @@ docker-compose up -d
 
 # Or build and run manually
 docker build -t texas-idea-generator .
-docker run -p 3000:80 texas-idea-generator
+docker run -p 3000:8080 texas-idea-generator
 ```
 
 The application will be available at `http://localhost:3000`

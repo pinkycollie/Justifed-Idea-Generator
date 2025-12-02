@@ -37,9 +37,8 @@ yarn-error.log*
 .git
 .gitignore
 
-# Documentation (not needed in container)
+# Documentation (not needed in production container)
 *.md
-!README.md
 LICENSE
 
 # TypeScript cache

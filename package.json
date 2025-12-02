@@ -21,10 +21,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:static": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
