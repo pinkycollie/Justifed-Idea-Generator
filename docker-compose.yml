@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  texas-idea-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: texas-idea-generator
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      - mbtq-network
+    labels:
+      - "com.mbtq.ecosystem=texas-idea-generator"
+      - "com.mbtq.platform=360-business-magician"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+networks:
+  mbtq-network:
+    driver: bridge
+    name: mbtq-network
