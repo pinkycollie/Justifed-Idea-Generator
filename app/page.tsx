@@ -1,4 +1,4 @@
-import { IdeaGenerator } from "@/components/idea-generator"
+import { EnhancedIdeaGenerator } from "@/components/enhanced-idea-generator"
 import { AccessibilityBanner } from "@/components/accessibility-banner"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -9,10 +9,15 @@ export default function Home() {
         <AccessibilityBanner />
         <div className="container mx-auto px-4 py-8">
           <header className="mb-8 text-center">
-            <h1 className="text-4xl font-bold text-slate-800 mb-2">360 Business Magician</h1>
-            <p className="text-xl text-slate-700">Texas Opportunity Generator</p>
+            <h1 className="text-4xl font-bold text-slate-800 mb-2">Texas Public Opportunity Portal</h1>
+            <p className="text-xl text-slate-700">
+              Connecting Texans with Jobs, Businesses & Government Resources
+            </p>
+            <p className="text-sm text-slate-600 mt-2">
+              Powered by SBA • Workforce Solutions • Department of Labor • Economic Development
+            </p>
           </header>
-          <IdeaGenerator />
+          <EnhancedIdeaGenerator />
         </div>
       </main>
     </ThemeProvider>
