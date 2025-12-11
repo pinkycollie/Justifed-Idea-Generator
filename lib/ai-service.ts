@@ -182,9 +182,22 @@ Provide:
       maxTokens: 400,
     })
 
-    // Parse response to extract score (simplified)
-    const scoreMatch = response.text.match(/(\d+)/)
-    const score = scoreMatch ? parseInt(scoreMatch[1]) : 70
+    // Parse response to extract score with better pattern matching
+    // Look for patterns like "score: 85", "feasibility: 72%", or "rating: 90/100"
+    const scorePatterns = [
+      /(?:score|feasibility|rating):\s*(\d+)/i,
+      /(\d+)(?:\s*%|\s*\/\s*100)/,
+      /\b(\d+)\s*(?:out of 100|percent feasibility)/i
+    ]
+    
+    let score = 70 // Default fallback
+    for (const pattern of scorePatterns) {
+      const match = response.text.match(pattern)
+      if (match) {
+        score = parseInt(match[1])
+        break
+      }
+    }
 
     return {
       score: Math.min(100, Math.max(0, score)),

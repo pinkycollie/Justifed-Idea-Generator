@@ -48,7 +48,8 @@ function calculateFeasibilityScore(formData: ValidationFormData): number {
 
   // Clarity score (20 points) - based on structured information
   let clarityPoints = 0
-  if (formData.estimatedBudget.match(/\$|USD|\d+/)) clarityPoints += 0.3
+  // More specific budget validation - simpler pattern to avoid ReDoS
+  if (formData.estimatedBudget.match(/^\$?\d+(?:[,.]\d+)?(?:\s*USD)?$/)) clarityPoints += 0.3
   if (formData.timeline.length > 0) clarityPoints += 0.3
   if (formData.expectedOutcomes.length > 0) clarityPoints += 0.4
 

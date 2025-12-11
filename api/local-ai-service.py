@@ -227,4 +227,5 @@ if __name__ == '__main__':
     print("  - POST /api/generate       - Generate ideas")
     print("  - POST /api/validate       - Validate business concept")
     print("  - GET  /api/ollama/status  - Check Ollama status")
-    app.run(host='0.0.0.0', port=PORT, debug=True)
+    # Production mode - debug should be False for security
+    app.run(host='0.0.0.0', port=PORT, debug=False)
