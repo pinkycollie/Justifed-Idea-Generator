@@ -43,3 +43,5 @@ api/*.pyc
 # OS
 .DS_Store
 Thumbs.db
+next-env.d.tsnode_modules/
+.next/

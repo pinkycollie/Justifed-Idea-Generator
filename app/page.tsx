@@ -4,6 +4,7 @@ import { useState } from "react"
 import { IdeaGenerator } from "@/components/idea-generator"
 import { ValidationTool } from "@/components/validation-tool"
 import { AISettings } from "@/components/ai-settings"
+import { EnhancedIdeaGenerator } from "@/components/enhanced-idea-generator"
 import { AccessibilityBanner } from "@/components/accessibility-banner"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -53,6 +54,15 @@ export default function Home() {
               </div>
             </TabsContent>
           </Tabs>
+            <h1 className="text-4xl font-bold text-slate-800 mb-2">Texas Public Opportunity Portal</h1>
+            <p className="text-xl text-slate-700">
+              Connecting Texans with Jobs, Businesses & Government Resources
+            </p>
+            <p className="text-sm text-slate-600 mt-2">
+              Powered by SBA • Workforce Solutions • Department of Labor • Economic Development
+            </p>
+          </header>
+          <EnhancedIdeaGenerator />
         </div>
       </main>
     </ThemeProvider>
