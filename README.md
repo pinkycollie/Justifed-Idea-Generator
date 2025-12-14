@@ -241,10 +241,12 @@ This project is automatically deployed to GitHub Pages via GitHub Actions.
 
 ### Automated CI/CD
 
-- **Continuous Integration**: Automatic linting and building on every push and PR
+- **Continuous Integration**: Automatic building on every push and PR
 - **Continuous Deployment**: Automatic deployment to GitHub Pages on every push to `main`
 - **Auto-Updates**: Dependabot automatically creates PRs for dependency updates
 - **Auto-Merge**: Patch and minor dependency updates are automatically merged after CI passes
+
+For detailed deployment setup instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ### Manual Deployment
 
