@@ -3,8 +3,10 @@
 
 *Public-facing tool connecting Texans with employment and business opportunities*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/pinksync/v0-texas-generator)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/YV07sw8hTEW)
+[![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://pinkycollie.github.io/Justifed-Idea-Generator/)
+[![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js%2016-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+
+> **🚀 New to this repo?** See [SETUP.md](SETUP.md) for quick deployment setup (2 minutes)
 
 ## Overview
 
@@ -132,11 +134,11 @@ No setup required - perfect for testing!
 
 ## Technology Stack
 
-- **Frontend**: Next.js 15, React 19, TypeScript
+- **Frontend**: Next.js 16, React 19, TypeScript
 - **Styling**: Tailwind CSS, shadcn/ui components
 - **AI**: Ollama, Python Flask, Custom integrations
-- **Build**: Next.js build system
-- **Deployment**: Vercel
+- **Build**: Next.js build system with static export
+- **Deployment**: GitHub Pages with automated CI/CD
 
 ## Usage
 
@@ -227,7 +229,7 @@ The application uses an engineered prompt framework documented in `context.md`:
 
 ## Technology Stack
 
-- **Next.js 15** - React framework
+- **Next.js 16** - React framework
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first styling
 - **Radix UI** - Accessible component primitives
@@ -235,13 +237,27 @@ The application uses an engineered prompt framework documented in `context.md`:
 
 ## Deployment
 
-Your project is live at:
+This project is automatically deployed to GitHub Pages via GitHub Actions.
 
-**[https://vercel.com/pinksync/v0-texas-generator](https://vercel.com/pinksync/v0-texas-generator)**
+**Live Site**: [https://pinkycollie.github.io/Justifed-Idea-Generator/](https://pinkycollie.github.io/Justifed-Idea-Generator/)
 
-### Deploy Your Own
+### Automated CI/CD
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pinkycollie/v0-texas_idea_generator)
+- **Continuous Integration**: Automatic building on every push and PR
+- **Continuous Deployment**: Automatic deployment to GitHub Pages on every push to `main`
+- **Auto-Updates**: Dependabot automatically creates PRs for dependency updates
+- **Auto-Merge**: Patch and minor dependency updates are automatically merged after CI passes
+
+For detailed deployment setup instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+### Manual Deployment
+
+To deploy manually:
+
+```bash
+npm run build
+# The static files will be in the /out directory
+```
 
 ## Development
 
@@ -403,23 +419,19 @@ Each region includes specific:
 
 ## Contributing
 
-This repository syncs with v0.dev deployments. To make changes:
+Contributions are welcome! To contribute:
 
-1. Build your app on [v0.dev](https://v0.dev/chat/projects/YV07sw8hTEW)
-2. Deploy changes from the v0 interface
-3. Changes automatically push to this repository
-4. Vercel deploys the latest version
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+All pull requests will automatically run CI checks (linting and building) before merge.
 
 ## License
 
-See the LICENSE file for details.
+Private repository - All rights reserved
 
 ## Support
 
@@ -430,8 +442,7 @@ For issues or questions:
 
 ## Acknowledgments
 
-- Built with [v0.dev](https://v0.dev)
-- Deployed on [Vercel](https://vercel.com)
+- Built with [Next.js](https://nextjs.org)
+- Deployed on [GitHub Pages](https://pages.github.com)
 - UI components from [shadcn/ui](https://ui.shadcn.com)
 - Icons from [Lucide](https://lucide.dev)
-Private repository - All rights reserved
