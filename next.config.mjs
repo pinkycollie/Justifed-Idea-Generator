@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  output: 'export',
+  basePath: '/Justifed-Idea-Generator',
   typescript: {
     ignoreBuildErrors: true,
   },
