@@ -6,6 +6,8 @@
 [![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://pinkycollie.github.io/Justifed-Idea-Generator/)
 [![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js%2016-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 
+> **🚀 New to this repo?** See [SETUP.md](SETUP.md) for quick deployment setup (2 minutes)
+
 ## Overview
 
 An advanced HTML-based interface for generating innovative business ideas with integrated AI support and validation tools. This application helps users justify accommodation needs for vocational rehabilitation, SBA, and other funding agencies.
