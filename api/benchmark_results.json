@@ -1,0 +1,125 @@
+{
+  "Idea Generation - jobs": {
+    "mean_ms": 0.0012807209992615753,
+    "median_ms": 0.0012130000186516554,
+    "min_ms": 0.0011019999988093332,
+    "max_ms": 0.018354000019371597,
+    "std_dev_ms": 0.0007941907370854881,
+    "iterations": 1000
+  },
+  "Idea Generation - businesses": {
+    "mean_ms": 0.001225238999722933,
+    "median_ms": 0.001202000021294225,
+    "min_ms": 0.0010919999908765021,
+    "max_ms": 0.012233000006744987,
+    "std_dev_ms": 0.0003646961575089857,
+    "iterations": 1000
+  },
+  "Idea Generation - self-employment": {
+    "mean_ms": 0.0012601830006246928,
+    "median_ms": 0.0012219999803164683,
+    "min_ms": 0.0011219999578315765,
+    "max_ms": 0.012803000004169007,
+    "std_dev_ms": 0.0004550197405657039,
+    "iterations": 1000
+  },
+  "Idea Generation - contracts": {
+    "mean_ms": 0.0012306199996032774,
+    "median_ms": 0.001202000021294225,
+    "min_ms": 0.0011019999988093332,
+    "max_ms": 0.011582000013277138,
+    "std_dev_ms": 0.0003414391523745203,
+    "iterations": 1000
+  },
+  "Idea Generation - With Context": {
+    "mean_ms": 0.0012202770004137165,
+    "median_ms": 0.001202999982297115,
+    "min_ms": 0.0010919999908765021,
+    "max_ms": 0.0031659999990552024,
+    "std_dev_ms": 9.970585509622498e-05,
+    "iterations": 1000
+  },
+  "Validation - Empty Data": {
+    "mean_ms": 0.0033469760000457427,
+    "median_ms": 0.0032760000294729252,
+    "min_ms": 0.0032059999739431078,
+    "max_ms": 0.018995999994331214,
+    "std_dev_ms": 0.0007709295627175,
+    "iterations": 1000
+  },
+  "Validation - Minimal Data": {
+    "mean_ms": 0.0035248650009407356,
+    "median_ms": 0.0033770000413824164,
+    "min_ms": 0.0032959999884951685,
+    "max_ms": 0.025687999993806443,
+    "std_dev_ms": 0.0011598318487480838,
+    "iterations": 1000
+  },
+  "Validation - Partial Data": {
+    "mean_ms": 0.003495038000551176,
+    "median_ms": 0.003446999983225396,
+    "min_ms": 0.003355999979248736,
+    "max_ms": 0.014616999976624356,
+    "std_dev_ms": 0.0005771068619190053,
+    "iterations": 1000
+  },
+  "Validation - Complete Data": {
+    "mean_ms": 0.004103737001400987,
+    "median_ms": 0.004036999996515078,
+    "min_ms": 0.003927000022940774,
+    "max_ms": 0.016820999974243023,
+    "std_dev_ms": 0.0007602985589838029,
+    "iterations": 1000
+  },
+  "Content Quality - Ideas": {
+    "total_generated": 100,
+    "unique_ideas": 38,
+    "uniqueness_ratio": 0.38,
+    "avg_length_chars": 110.74,
+    "min_length_chars": 105,
+    "max_length_chars": 120
+  },
+  "Content Quality - Validation": {
+    "mean_score": 30,
+    "std_dev_score": 0.0,
+    "min_score": 30,
+    "max_score": 30,
+    "consistency": "EXCELLENT"
+  },
+  "Scalability - Batch 10": {
+    "batch_size": 10,
+    "total_time_ms": 0.020247000009021576,
+    "avg_per_item_ms": 0.0020247000009021576,
+    "throughput_per_sec": 493900.3306931516
+  },
+  "Scalability - Batch 50": {
+    "batch_size": 50,
+    "total_time_ms": 0.05770699999629869,
+    "avg_per_item_ms": 0.0011541399999259738,
+    "throughput_per_sec": 866446.0118045815
+  },
+  "Scalability - Batch 100": {
+    "batch_size": 100,
+    "total_time_ms": 0.11040600003298096,
+    "avg_per_item_ms": 0.0011040600003298096,
+    "throughput_per_sec": 905747.8757506618
+  },
+  "Scalability - Batch 500": {
+    "batch_size": 500,
+    "total_time_ms": 0.557809999975234,
+    "avg_per_item_ms": 0.001115619999950468,
+    "throughput_per_sec": 896362.5607683609
+  },
+  "Scalability - Batch 1000": {
+    "batch_size": 1000,
+    "total_time_ms": 1.1345049999818002,
+    "avg_per_item_ms": 0.0011345049999818002,
+    "throughput_per_sec": 881441.6860357971
+  },
+  "Memory Efficiency": {
+    "generator_size_bytes": 48,
+    "validator_size_bytes": 48,
+    "category_templates_size_bytes": 184,
+    "texas_keywords_size_bytes": 136
+  }
+}
