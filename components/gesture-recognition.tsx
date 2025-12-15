@@ -44,8 +44,22 @@ export function GestureRecognition({ onGestureDetected, enabled = false }: Gestu
         setStream(mediaStream);
         setIsActive(true);
       }
-    } catch (err) {
-      setError('Unable to access camera. Please grant camera permissions.');
+    } catch (err: any) {
+      let errorMessage = 'Unable to access camera. ';
+      
+      if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+        errorMessage += 'Please grant camera permissions in your browser settings.';
+      } else if (err.name === 'NotFoundError' || err.name === 'DevicesNotFoundError') {
+        errorMessage += 'No camera device found. Please connect a camera.';
+      } else if (err.name === 'NotReadableError' || err.name === 'TrackStartError') {
+        errorMessage += 'Camera is already in use by another application.';
+      } else if (err.name === 'OverconstrainedError') {
+        errorMessage += 'Camera does not support the required settings.';
+      } else {
+        errorMessage += 'An unexpected error occurred.';
+      }
+      
+      setError(errorMessage);
       console.error('Camera access error:', err);
     }
   };
