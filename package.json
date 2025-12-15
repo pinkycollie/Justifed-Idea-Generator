@@ -8,6 +8,7 @@
     "start": "next start",
     "export": "next build",
     "test": "vitest",
+    "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage"
   },
