@@ -200,12 +200,12 @@ export function benchmarkFunction(func: () => void, iterations: number = 1000): 
 /**
  * Run comprehensive benchmarks
  */
-export function runBenchmarks(): Record<string, BenchmarkMetrics> {
+export function runBenchmarks(iterations: number = 100): Record<string, BenchmarkMetrics> {
   const results: Record<string, BenchmarkMetrics> = {};
   const generator = new IdeaGenerator();
   const validator = new ValidationEngine();
 
-  // Benchmark idea generation
+  // Benchmark idea generation (reduced iterations for browser performance)
   const categories: Array<keyof typeof generator['categoryTemplates']> = [
     'jobs', 'businesses', 'self-employment', 'contracts'
   ];
@@ -213,7 +213,7 @@ export function runBenchmarks(): Record<string, BenchmarkMetrics> {
   categories.forEach(category => {
     results[`Idea Generation - ${category}`] = benchmarkFunction(
       () => generator.generateIdea(category),
-      1000
+      iterations
     );
   });
 
@@ -229,7 +229,7 @@ export function runBenchmarks(): Record<string, BenchmarkMetrics> {
 
   results['Validation - Complete Data'] = benchmarkFunction(
     () => validator.calculateFeasibility(testData),
-    1000
+    iterations
   );
 
   return results;
