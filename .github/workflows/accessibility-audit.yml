@@ -82,7 +82,7 @@ jobs:
           echo "- Color contrast compliance" >> accessibility-report.md
 
       - name: Upload accessibility report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: accessibility-report
           path: accessibility-report.md
