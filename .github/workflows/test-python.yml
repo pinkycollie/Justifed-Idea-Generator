@@ -43,7 +43,7 @@ jobs:
           python benchmark_ai_service.py
 
       - name: Upload benchmark results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: python-benchmark-results
           path: api/benchmark_results.json
