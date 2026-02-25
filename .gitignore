@@ -21,6 +21,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+vercel.json
+.vercelignore
 
 # typescript
 *.tsbuildinfo
@@ -43,5 +45,3 @@ api/*.pyc
 # OS
 .DS_Store
 Thumbs.db
-next-env.d.tsnode_modules/
-.next/
