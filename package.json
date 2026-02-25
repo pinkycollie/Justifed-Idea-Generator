@@ -1,7 +1,23 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "texas-idea-generator",
+  "version": "1.0.0",
+  "description": "Texas Opportunity Idea Generator - Part of the MBTQ Ecosystem and 360 Business Magician platform to assist entrepreneurs in finding ideas designed for the Texas market",
   "private": true,
+  "keywords": [
+    "texas",
+    "business",
+    "entrepreneur",
+    "idea-generator",
+    "mbtq",
+    "360-business-magician"
+  ],
+  "author": "MBTQ Ecosystem",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinkycollie/v0-texas_idea_generator"
+  },
+  "homepage": "https://mbtq.dev",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
