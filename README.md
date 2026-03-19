@@ -1,3 +1,15 @@
+# Texas Idea Generator
+
+> Part of the **MBTQ Ecosystem** | Powered by **360 Business Magician**
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/pinkycollie/v0-texas_idea_generator/ci.yml?branch=main&style=for-the-badge)](https://github.com/pinkycollie/v0-texas_idea_generator/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+[![MBTQ Ecosystem](https://img.shields.io/badge/MBTQ-Ecosystem-purple?style=for-the-badge)](https://mbtq.dev)
+[![360 Business Magician](https://img.shields.io/badge/360-Business%20Magician-indigo?style=for-the-badge)](https://360businessmagician.mbtquniverse.com)
+
+## Overview
+
+The **Texas Idea Generator** is an innovative web application designed to assist entrepreneurs in discovering business opportunities specifically tailored for the Texas market. This application is a key component of the **MBTQ Ecosystem** and the **360 Business Magician** platform, which helps entrepreneurs build, grow, and manage modular business processes.
 # 360 Business Magician - Texas Opportunity Generator
 # Texas Public Opportunity Generator
 
@@ -256,7 +268,7 @@ The application uses an engineered prompt framework documented in `context.md`:
 - **Radix UI** - Accessible component primitives
 - **Context-aware Engine** - Geolocation and circumstance matching
 
-## Deployment
+### Features
 
 This project is automatically deployed to GitHub Pages via GitHub Actions.
 
