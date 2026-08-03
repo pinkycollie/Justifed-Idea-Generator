@@ -1,0 +1,79 @@
+# Registry: known services and accommodation types
+# This is the source of truth for what this system supports.
+# Add new entries here when a real service or accommodation type is introduced.
+
+services:
+  - id: vocational-rehab
+    name: Vocational Rehabilitation
+    agency: Texas Workforce Commission – VR Division
+    eligibility: Disability with barrier to employment
+    fundingAvailable: true
+    accommodationsSupported:
+      - asl-interpreter
+      - cart-captioning
+      - screen-reader
+      - modified-schedule
+      - remote-work
+
+  - id: sba-microloan
+    name: SBA Microloan Program
+    agency: Small Business Administration
+    eligibility: Small business or nonprofit childcare center
+    maxAmount: 50000
+    fundingAvailable: true
+
+  - id: sba-7a
+    name: SBA 7(a) Loan Program
+    agency: Small Business Administration
+    eligibility: For-profit small business
+    maxAmount: 5000000
+    fundingAvailable: true
+
+  - id: wioa-adult
+    name: WIOA Adult Program
+    agency: Texas Workforce Commission
+    eligibility: Adult job seekers
+    fundingAvailable: true
+
+  - id: wioa-youth
+    name: WIOA Youth Program
+    agency: Texas Workforce Commission
+    eligibility: Youth ages 16–24
+    fundingAvailable: true
+
+  - id: snap-et
+    name: SNAP Employment & Training
+    agency: Texas Health and Human Services
+    eligibility: SNAP recipients
+    fundingAvailable: true
+
+accommodations:
+  - id: asl-interpreter
+    name: ASL Interpreter
+    description: American Sign Language interpretation for Deaf individuals
+    population: deaf-hoh
+
+  - id: cart-captioning
+    name: CART / Real-Time Captioning
+    description: Communication Access Realtime Translation for Deaf and Hard of Hearing
+    population: deaf-hoh
+
+  - id: screen-reader
+    name: Screen Reader / Assistive Technology
+    description: Software enabling access for blind or low-vision users
+    population: blind-low-vision
+
+  - id: vri
+    name: Video Remote Interpreting (VRI)
+    description: On-demand remote ASL interpretation via video
+    population: deaf-hoh
+
+  - id: modified-schedule
+    name: Modified Work Schedule
+    description: Flexible or reduced hours accommodation
+    population: general
+
+  - id: remote-work
+    name: Remote / Telework Accommodation
+    description: Work-from-home arrangement as reasonable accommodation
+    population: general

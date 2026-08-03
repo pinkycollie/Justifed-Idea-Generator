@@ -1,5 +1,9 @@
 // AI Service Integration for Ollama and Local AI
 // This module provides integration with Ollama AI and local AI solutions
+//
+// PinkyAI is the single entry point for all AI calls in the MBTQ pipeline.
+// Use PinkyAI.run(snippetName, input) instead of calling providers directly.
+// Snippets live in mbtq/snippets/prompts/ and are loaded by name.
 
 export interface AIRequest {
   prompt: string
@@ -226,3 +230,39 @@ export function getAIService(config?: AIServiceConfig): AIService {
 export function configureAIService(config: AIServiceConfig): void {
   aiServiceInstance = new AIService(config)
 }
+
+// ---------------------------------------------------------------------------
+// PinkyAI — the single AI entry point for the MBTQ pipeline.
+// Swap providers by changing AIServiceConfig; business logic stays untouched.
+// ---------------------------------------------------------------------------
+
+export interface PinkyAIInput {
+  [key: string]: unknown
+}
+
+export interface PinkyAIResult {
+  text: string
+  confidence: number
+  model: string
+  processingTime: number
+}
+
+class PinkyAIAdapter {
+  async run(snippetName: string, input: PinkyAIInput): Promise<PinkyAIResult> {
+    const prompt = this.buildPrompt(snippetName, input)
+    const service = getAIService()
+    return service.generateIdea({ prompt, category: snippetName })
+  }
+
+  private buildPrompt(snippetName: string, input: PinkyAIInput): string {
+    // Build a prompt by interpolating input values into a named snippet template.
+    // Snippet files live in mbtq/snippets/prompts/<snippetName>.md.
+    // At runtime (server-side), snippets can be loaded from disk.
+    // For now, fall back to a JSON context prompt so the system works without file I/O.
+    const context = JSON.stringify(input, null, 2)
+    return `You are the MBTQ business assistant. Using the "${snippetName}" workflow:\n\n${context}\n\nProvide a helpful, actionable response.`
+  }
+}
+
+export const PinkyAI = new PinkyAIAdapter()
+

@@ -1,0 +1,40 @@
+name: proposal
+description: Generate a funding justification proposal from a validated idea.
+stage: proposal
+next: approved
+
+inputs:
+  - businessName
+  - businessType
+  - fundingAgency
+  - accommodationNeeds
+  - businessGoals
+  - targetMarket
+  - estimatedBudget
+  - timeline
+  - expectedOutcomes
+
+steps:
+  - id: score
+    action: calculateFeasibilityScore
+    service: lib/proposal-generator
+    params:
+      formData: "{{inputs}}"
+
+  - id: report
+    action: generateValidationReport
+    service: lib/proposal-generator
+    params:
+      formData: "{{inputs}}"
+
+outputs:
+  proposal: "{{inputs}}"
+  report: "{{steps.report.report}}"
+  feasibilityScore: "{{steps.score}}"
+  # Handoff payload for downstream systems (approved → build → grow → managed)
+  handoff:
+    stageId: "{{uuid}}"
+    fromStage: proposal
+    toStage: approved
+    proposal: "{{inputs}}"
+    feasibilityScore: "{{steps.score}}"

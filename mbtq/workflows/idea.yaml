@@ -1,0 +1,36 @@
+name: idea
+description: Generate a justified business idea from a user's vision and circumstances.
+stage: idea
+next: proposal
+
+inputs:
+  - category       # jobs | businesses | self-employment | contracts
+  - region         # Texas region
+  - userProfile    # partial UserCircumstances
+
+steps:
+  - id: match
+    action: generatePersonalizedOpportunity
+    service: lib/idea-generator
+    params:
+      category: "{{inputs.category}}"
+      userCircumstances: "{{inputs.userProfile}}"
+
+  - id: enhance
+    action: PinkyAI.run
+    snippet: prompts/enhance-idea
+    params:
+      idea: "{{steps.match.opportunity.title}}"
+      category: "{{inputs.category}}"
+      region: "{{inputs.region}}"
+
+outputs:
+  idea:
+    id: "{{uuid}}"
+    stage: idea
+    title: "{{steps.match.opportunity.title}}"
+    category: "{{inputs.category}}"
+    region: "{{inputs.region}}"
+    description: "{{steps.enhance.text}}"
+    createdAt: "{{now}}"
+  matchProbability: "{{steps.match.matchProbability}}"
