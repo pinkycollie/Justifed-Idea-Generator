@@ -7,7 +7,7 @@ updates:
       interval: "daily"
       time: "3pm"
     open-pull-requests-limit: 10
-    versioning-strategy: stable and html-static-based
+    versioning-strategy: stable and deno
     labels:
       - "dependencies"
       - "automated"
