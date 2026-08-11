@@ -1,0 +1,69 @@
+name: Reusable Chores
+on:
+  workflow_call:
+    inputs:
+      tasks:
+        description: 'JSON array of chore names (e.g. ["lint","test"])'
+        required: false
+        type: string
+        default: '["lint","test","build","cleanup"]'
+      run_by:
+        description: 'Caller identifier'
+        required: false
+        type: string
+        default: 'unknown'
+permissions:
+  contents: read
+concurrency:
+  group: reusable-chores-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  run-chore:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        task: ${{ fromJson(inputs.tasks) }}
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Prepare environment
+        run: |
+          set -euo pipefail
+          mkdir -p logs
+          echo "Running chore: ${{ matrix.task }} (invoked by: ${{ inputs.run_by }})"
+      - name: Run chore script
+        run: |
+          case "${{ matrix.task }}" in
+            lint)
+              ./scripts/lint.sh | tee logs/${{ matrix.task }}.log
+              ;;
+            test)
+              ./scripts/test.sh | tee logs/${{ matrix.task }}.log
+              ;;
+            build)
+              ./scripts/build.sh | tee logs/${{ matrix.task }}.log
+              ;;
+            cleanup)
+              ./scripts/cleanup.sh | tee logs/${{ matrix.task }}.log
+              ;;
+            security-scan)
+              ./scripts/security-scan.sh | tee logs/${{ matrix.task }}.log
+              ;;
+            release-check)
+              ./scripts/release-check.sh | tee logs/${{ matrix.task }}.log
+              ;;
+            *)
+              echo "Unknown chore: ${{ matrix.task }}" | tee logs/${{ matrix.task }}.log
+              exit 1
+              ;;
+          esac
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload logs artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chore-${{ matrix.task }}-logs
+          path: logs/${{ matrix.task }}.log
