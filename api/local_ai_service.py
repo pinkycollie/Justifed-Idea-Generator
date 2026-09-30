@@ -8,6 +8,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
 import random
+import os
 from typing import Dict, Any, List
 
 app = Flask(__name__)
@@ -227,5 +228,10 @@ if __name__ == '__main__':
     print("  - POST /api/generate       - Generate ideas")
     print("  - POST /api/validate       - Validate business concept")
     print("  - GET  /api/ollama/status  - Check Ollama status")
+    
+    # Use environment variable for host binding
+    host = os.environ.get('FLASK_HOST', '127.0.0.1')
+    print(f"Binding to {host} (set FLASK_HOST=0.0.0.0 for network access)")
+    
     # Production mode - debug should be False for security
-    app.run(host='0.0.0.0', port=PORT, debug=False)
+    app.run(host=host, port=PORT, debug=False)

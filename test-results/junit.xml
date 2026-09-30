@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="17" failures="0" errors="0" time="0.355">
+    <testsuite name="__tests__/validation-js-bridge.test.ts" timestamp="2025-12-15T11:15:22.456Z" hostname="runnervm6qbrg" tests="17" failures="0" errors="0" skipped="0" time="0.010518191">
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="ValidationEngine &gt; should calculate feasibility for complete data" time="0.001880866">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="ValidationEngine &gt; should handle empty data" time="0.000472401">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="ValidationEngine &gt; should handle minimal data" time="0.000273409">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="ValidationEngine &gt; should give proper credit for budget" time="0.000214019">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="ValidationEngine &gt; should detect market alignment keywords" time="0.000290712">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="IdeaGenerator &gt; should generate ideas for jobs category" time="0.000380229">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="IdeaGenerator &gt; should generate ideas for businesses category" time="0.000168213">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="IdeaGenerator &gt; should generate ideas for self-employment category" time="0.00019324">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="IdeaGenerator &gt; should generate ideas for contracts category" time="0.000286885">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="IdeaGenerator &gt; should handle context" time="0.000229167">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="IdeaGenerator &gt; should return error for invalid category" time="0.000161771">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="IdeaGenerator &gt; should generate diverse ideas" time="0.000272007">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="Benchmarking &gt; should benchmark a function" time="0.000727426">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="Benchmarking &gt; should run comprehensive benchmarks" time="0.002068116">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="Python-JavaScript Parity &gt; should produce similar validation scores" time="0.00022527">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="Python-JavaScript Parity &gt; should produce consistent scores across multiple runs" time="0.000312493">
+        </testcase>
+        <testcase classname="__tests__/validation-js-bridge.test.ts" name="Python-JavaScript Parity &gt; should have similar performance to Python" time="0.000681932">
+        </testcase>
+    </testsuite>
+</testsuites>
