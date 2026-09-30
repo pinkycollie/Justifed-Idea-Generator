@@ -1,0 +1,19 @@
+- name: Actions Dashboard
+  # You may pin to the exact commit or the version.
+  # uses: pushtodisplay/actions-dashboard@ce26532a36af079259315587543935064f22e6b4
+  uses: pushtodisplay/actions-dashboard@v1.0.0
+  with:
+    # Serialized steps context of the calling job (the workflow passes toJSON(steps)). Only steps that declare an id: are included — GitHub itself computes this list. Empty context means the report step is first: status 'started'. Otherwise the job's status: done, failed, cancelled, or in progress.
+    steps-json: # optional
+    # Set to true on report steps placed in the middle of a job — the job is still running, so the status is 'in progress' instead of 'done'. Leave unset on the first or last report step. A failure or cancellation is always reported as such.
+    progress: # optional
+    # API key for authentication. Optional when the workflow or job sets env PUSH_TO_DISPLAY_API_KEY.
+    api-key: # optional
+    # Base URL of the Push to Display API. Override only for self-hosted instances or testing.
+    api-url: # optional, default is https://api.pushtodisplay.com
+    # Board ID to push to. Optional when the workflow or job sets env PUSH_TO_DISPLAY_BOARD. Omit to use the account's default board.
+    board-id: # optional
+    # Explicit panel ID (1-4). Defaults to panel 1.
+    panel-id: # optional
+    # Label shown on the board. Defaults to the workflow name.
+    label: # optional
